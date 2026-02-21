@@ -7,7 +7,26 @@ books = [
     {"id": 2, "name": "Meditations", "price": 15.75}
 ]
 
+API_KEY = "12345"
 book_id_counter = len(books) + 1
+
+@app.before_request
+def log_request_info():
+    print("Method:", request.method)
+    print("URL:", request.url)
+
+@app.before_request
+def check_api_key():
+    if request.endpoint in ["get_book_list", "add_book"] and request.method in ["GET", "POST"]:
+        print("Checking API key for endpoint:", request.endpoint)
+        key = request.headers.get("x-api-key")
+        if key != API_KEY:
+            return jsonify({"error": "Unauthorized"}), 401
+        
+@app.after_request
+def log_response_info(response):
+    print("Status:", response.status)
+    return response
 
 @app.route("/health", methods=["GET"])
 def health_check(): 
