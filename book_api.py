@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+import logging
 
 app = Flask(__name__)
 
@@ -6,6 +7,12 @@ books = [
     {"id": 1, "name": "Uncle Tom's Cabin", "price": 9.50},
     {"id": 2, "name": "Meditations", "price": 15.75}
 ]
+
+logging.basicConfig(
+    filename="logs.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 API_KEY = "12345"
 book_id_counter = len(books) + 1
