@@ -1,13 +1,32 @@
-from flask import Flask, jsonify, request
+from flask import Flask, request, jsonify
+from flask_smorest import Api, Blueprint
+from marshmallow import Schema, fields
+from flask.views import MethodView
 import logging
 
+
 app = Flask(__name__)
+
+# ----------------------
+# OpenAPI CONFIG
+# ----------------------
+app.config["API_TITLE"] = "Book API"
+app.config["API_VERSION"] = "v1"
+app.config["OPENAPI_VERSION"] = "3.0.3"
+app.config["OPENAPI_URL_PREFIX"] = "/"
+app.config["OPENAPI_SWAGGER_UI_PATH"] = "/swagger-ui"
+app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
+
+api = Api(app)
 
 books = [
     {"id": 1, "name": "Uncle Tom's Cabin", "price": 9.50},
     {"id": 2, "name": "Meditations", "price": 15.75}
 ]
 
+# ----------------------
+# Logging
+# ----------------------
 logging.basicConfig(
     filename="logs.log",
     level=logging.INFO,
@@ -29,7 +48,35 @@ def check_api_key():
         key = request.headers.get("x-api-key")
         if key != API_KEY:
             return jsonify({"error": "Unauthorized"}), 401
-        
+
+# ----------------------
+# Schema
+# ----------------------
+class BookSchema(Schema):
+    id = fields.Int(dump_only=True)
+    name = fields.Str(required=True)
+    price = fields.Float(required=True)
+
+# ----------------------
+# Blueprint
+# ----------------------
+blp = Blueprint("books", "books", url_prefix="/books", description="Book operations")
+
+@blp.route("/")
+class Books(MethodView):
+    @blp.response(200, BookSchema(many=True))
+    def get(self):
+        return books
+
+    @blp.arguments(BookSchema)
+    @blp.response(201, BookSchema)
+    def post(self, new_book):
+        new_book["id"] = len(books) + 1
+        books.append(new_book)
+        return new_book
+
+api.register_blueprint(blp)
+
 @app.after_request
 def log_response_info(response):
     print("Status:", response.status)

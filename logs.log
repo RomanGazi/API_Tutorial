@@ -9,3 +9,37 @@
 2026-02-22 14:34:48,378 - INFO - 127.0.0.1 - - [22/Feb/2026 14:34:48] "[31m[1mGET /book_list HTTP/1.1[0m" 401 -
 2026-02-22 14:35:33,833 - INFO - 127.0.0.1 - - [22/Feb/2026 14:35:33] "GET /book_list HTTP/1.1" 200 -
 2026-02-22 14:36:02,290 - INFO - 127.0.0.1 - - [22/Feb/2026 14:36:02] "[35m[1mPOST /book_list HTTP/1.1[0m" 201 -
+2026-02-22 14:44:17,034 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8000
+2026-02-22 14:44:17,034 - INFO - [33mPress CTRL+C to quit[0m
+2026-02-22 14:44:17,034 - INFO -  * Restarting with stat
+2026-02-22 14:44:17,111 - WARNING -  * Debugger is active!
+2026-02-22 14:44:17,129 - INFO -  * Debugger PIN: 514-745-608
+2026-02-22 14:44:31,477 - INFO - 127.0.0.1 - - [22/Feb/2026 14:44:31] "[33mGET /swagger-ui HTTP/1.1[0m" 404 -
+2026-02-22 14:44:44,535 - INFO - 127.0.0.1 - - [22/Feb/2026 14:44:44] "[33mGET /swagger-ui HTTP/1.1[0m" 404 -
+2026-02-22 14:46:24,120 - INFO - 127.0.0.1 - - [22/Feb/2026 14:46:24] "[33mGET /swagger-ui HTTP/1.1[0m" 404 -
+2026-02-22 14:46:24,905 - INFO - 127.0.0.1 - - [22/Feb/2026 14:46:24] "[33mGET /swagger-ui HTTP/1.1[0m" 404 -
+2026-02-22 14:47:10,020 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8000
+2026-02-22 14:47:10,020 - INFO - [33mPress CTRL+C to quit[0m
+2026-02-22 14:47:10,021 - INFO -  * Restarting with stat
+2026-02-22 14:47:10,105 - WARNING -  * Debugger is active!
+2026-02-22 14:47:10,117 - INFO -  * Debugger PIN: 514-745-608
+2026-02-22 14:47:40,964 - INFO - 127.0.0.1 - - [22/Feb/2026 14:47:40] "[33mGET /swagger-ui HTTP/1.1[0m" 404 -
+2026-02-22 14:47:55,557 - INFO - 127.0.0.1 - - [22/Feb/2026 14:47:55] "[33mGET /openapi.json HTTP/1.1[0m" 404 -
+2026-02-22 14:49:12,076 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8000
+2026-02-22 14:49:12,077 - INFO - [33mPress CTRL+C to quit[0m
+2026-02-22 14:49:12,077 - INFO -  * Restarting with stat
+2026-02-22 14:49:12,153 - WARNING -  * Debugger is active!
+2026-02-22 14:49:12,161 - INFO -  * Debugger PIN: 131-138-398
+2026-02-22 14:49:15,777 - INFO - 127.0.0.1 - - [22/Feb/2026 14:49:15] "[33mGET /openapi.json HTTP/1.1[0m" 404 -
+2026-02-22 14:55:20,128 - INFO - 127.0.0.1 - - [22/Feb/2026 14:55:20] "[33mGET /openapi.json HTTP/1.1[0m" 404 -
+2026-02-22 14:55:20,460 - INFO - 127.0.0.1 - - [22/Feb/2026 14:55:20] "[33mGET /openapi.json HTTP/1.1[0m" 404 -
+2026-02-22 15:07:32,328 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8000
+2026-02-22 15:07:32,328 - INFO - [33mPress CTRL+C to quit[0m
+2026-02-22 15:07:32,329 - INFO -  * Restarting with stat
+2026-02-22 15:07:32,414 - WARNING -  * Debugger is active!
+2026-02-22 15:07:32,423 - INFO -  * Debugger PIN: 131-138-398
+2026-02-22 15:07:39,965 - INFO - 127.0.0.1 - - [22/Feb/2026 15:07:39] "GET /openapi.json HTTP/1.1" 200 -
