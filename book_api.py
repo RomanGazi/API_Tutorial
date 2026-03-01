@@ -60,7 +60,7 @@ class BookSchema(Schema):
 # ----------------------
 # Blueprint
 # ----------------------
-blp = Blueprint("books", "books", url_prefix="/books", description="Book operations")
+blp = Blueprint("book_list", "book_list", url_prefix="/books", description="Book operations")
 
 @blp.route("/")
 class Books(MethodView):
